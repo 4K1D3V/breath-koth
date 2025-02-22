@@ -1,0 +1,14 @@
+name: BreathKOTH
+version: 1.0
+main: pro.akii.ks.BreathKOTH
+api-version: 1.21
+author: ["Kit"]
+website: https://ks.akii.pro
+commands:
+  breathkoth:
+    description: Manage BreathKOTH plugin
+    usage: /<command> <start|stop|addzone|removezone|reload|gui>
+permissions:
+  breathkoth.admin:
+    description: Allows access to BreathKOTH admin commands
+    default: op

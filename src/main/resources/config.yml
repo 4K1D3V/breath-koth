@@ -1,0 +1,66 @@
+# BreathKOTH Configuration
+koth-zones:
+  zone1:
+    world: "world"
+    x: 0
+    y: 64
+    z: 0
+    radius: 5
+    interval: 300
+    permission: "breathkoth.zone.zone1"
+    visualize: true
+    events:
+      - "start: broadcast: &cDragon flames begin at zone1!"
+      - "end: broadcast: &aThe dragon rests at zone1."
+      - "start: spawn: zombie"
+      - "start: give: DIAMOND 1 2 random"  # Give 1 diamond to 2 random players
+      - "end: effect: SPEED 30 1 1"  # Speed II for 30s to 1 player
+      - "start: give: GOLD_INGOT 2 3 5"  # Give 2 gold ingots to 3 players, max 5 total per cycle
+  zone2:
+    world: "world"
+    x: 100
+    y: 64
+    z: 100
+    radius: 10
+    interval: 600
+    permission: null
+    visualize: true
+    events:
+      - "start: broadcast: &cBeware the flames at zone2!"
+flame-settings:
+  interval: 300
+  duration: 10
+  damage-per-tick: 4
+  warning-time: 5
+  cloud-duration: 20
+  player-activation-time: 30
+effects:
+  sound-enabled: true
+  particle-density: 0.5
+  particle-type: DRAGON_BREATH
+  spawn-dragon: true
+custom-effects:
+  "zone1":
+    damage-per-tick: 6
+    cloud-duration: 30
+    particle-type: FLAME
+    cloud-effects:
+      - type: HARM
+        duration: 20
+        amplifier: 0
+      - type: SLOWNESS
+        duration: 60
+        amplifier: 1
+  "zone2":
+    damage-per-tick: 3
+    cloud-duration: 15
+    particle-type: SMOKE
+    cloud-effects:
+      - type: POISON
+        duration: 40
+        amplifier: 0
+performance:
+  max-particles: 100
+  debug-mode: false
+teleport-cooldown: 30
+visualize-zones: true
